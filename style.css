@@ -1,0 +1,84 @@
+main {
+    width: var(--size);
+    height: var(--size);
+    --size: 60vmin;
+    margin: auto;
+    position: relative;
+    display: flex;
+    perspective: 100vmin;
+    --back: hsl(173, 100%, 50%); /* Color del árbol */
+    --fore: hsl(343, 100%, 50%); /* Color de las luces */
+    animation: colors 20000ms infinite linear; /* Animación */
+}
+h2{
+    color: rgb(234, 17, 17);
+    font-size: 40px;
+    text-align: 500px; 
+    margin-top: -150px;    /* Mover verticalmente*/
+    margin-left: -20px;  /* Mover horizontalmente*/
+}
+
+h3{
+    font-size: 40px;
+    text-align: 500px; 
+    margin-top: -55px;    /* Mover verticalmente*/
+    margin-left: -165px;  /* Mover horizontalmente*/
+    
+}
+
+ul {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin: auto;
+    list-style: none;
+    transform-origin: 50% 0%;
+}
+
+li {
+    --size: 1vmin;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    background: var(--back);
+    margin-bottom: calc(var(--size));
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background: rgb(18, 39, 45);
+}
+
+/* Usamos el * para hacer modificaciones en todos los elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.snow {
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: -500px;
+  }
+   
+  
+/* Animación de colores */
+@keyframes colors {
+    10% { --fore: hsl(343, 100%, 50%); }
+    30% { --fore: hsl(383, 100%, 50%); }
+    70% { --fore: hsl(213, 100%, 50%); }
+    90%, 100% { --fore: hsl(343, 100%, 50%); }
+}
+
+@keyframes fall {
+    0% {
+      top: -50px;
+    }
+  
+    100% {
+      top: 100vh;
+    }
+  }
